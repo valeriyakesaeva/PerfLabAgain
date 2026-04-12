@@ -1,4 +1,4 @@
-package Homework8;
+package Homework8_2;
 
 /*
 Задача 2: Создать класс, который будет хранить в себе коллекцию с названиями животных.
@@ -6,6 +6,22 @@ package Homework8;
 а удаляется всегда из конца. Показать работу объекта этого класса в main методе другого класса.
  */
 
-public class Homework8_2 {
+import java.util.LinkedList;
 
-}
+public class Animal {
+        private LinkedList<String> animals = new LinkedList<>();
+
+        public void addAnimal(String animal) {
+            animals.addFirst(animal);
+        }
+
+        public void removeAnimal() {
+            if (!animals.isEmpty()) {
+                animals.removeLast();
+            }
+        }
+
+        public void printAnimals() {
+            System.out.println(animals);
+        }
+    }
