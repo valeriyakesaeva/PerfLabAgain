@@ -43,6 +43,16 @@ package Homework4_2;
                 System.out.println("100: " + need100);
                 System.out.println("50: " + need50);
                 System.out.println("20: " + need20);
+
+                count100 -= need100;
+                count50 -= need50;
+                count20 -= need20;
+
+                System.out.println("Остаток:");
+                System.out.println("100: " + count100);
+                System.out.println("50: " + count50);
+                System.out.println("20: " + count20);
+
                 return true;
             } else {
                 return false;

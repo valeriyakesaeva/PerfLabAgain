@@ -8,7 +8,6 @@ package Homework6;
 
 public class Main {
     public static void main(String[] args) {
-
         Fail demo = new Fail();
 
         demo.methodOne();

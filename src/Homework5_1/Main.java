@@ -13,15 +13,13 @@ package Homework5_1;
  */
 
 public class Main {
-
     public static void main(String[] args) {
+        Client client = new Client();
 
-        Client Client = new Client();
-
-        Client.setTerapevtPlan(3);;
+        client.setTerapevtPlan(3);;
 
         Terapevt terapevt = new Terapevt();
 
-        terapevt.assignDoctor(Client);
+        terapevt.assignDoctor(client);
     }
 }
