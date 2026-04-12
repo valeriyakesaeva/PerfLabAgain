@@ -1,9 +1,7 @@
 package Homework5_1;
 
 public class Terapevt extends Doctor {
-
     public void assignDoctor(Client client) {
-
         int plan = client.getTerapevtPlan();
 
         if (plan == 1) {
