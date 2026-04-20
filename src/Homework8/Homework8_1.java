@@ -11,16 +11,21 @@ import java.util.Scanner;
 import java.util.Set;
 
 public class Homework8_1 {
-        public static void main(String[] args) {
-            Scanner scanner = new Scanner(System.in);
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
 
-            System.out.println("Введите числа через запятую:");
-            String input = scanner.nextLine();
+        System.out.println("Введите числа через запятую:");
+        String input = scanner.nextLine();
 
-            String[] numbers = input.split(",");
+        String[] numbers = input.split(",");
 
-            Set<String> unique = new LinkedHashSet<>(Arrays.asList(numbers));
+        Set<Integer> unique = new LinkedHashSet<>();
 
-            System.out.println("Без повторов: " + unique);
+        for (String num : numbers) {
+            int value = Integer.parseInt(num.trim());
+            unique.add(value);
         }
+
+        System.out.println("Без повторов: " + unique);
     }
+}

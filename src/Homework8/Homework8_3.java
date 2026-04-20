@@ -12,26 +12,29 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Homework8_3 {
-            public static Map<String, Boolean> wordMultiple(String[] words) {
+    public static Map<String, Boolean> wordMultiple(String[] words) {
 
-                Map<String, Integer> countMap = new HashMap<>();
-                for (String word : words) {
-                    countMap.put(word, countMap.getOrDefault(word, 0) + 1);
-                }
+        Map<String, Integer> countMap = new HashMap<>();
 
-                Map<String, Boolean> result = new HashMap<>();
-                for (String word : countMap.keySet()) {
-                    result.put(word, countMap.get(word) >= 2);
-                }
-
-                return result;
-            }
-
-            public static void main(String[] args) {
-                String[] arr = {"a", "b", "a", "c", "b"};
-
-                Map<String, Boolean> result = wordMultiple(arr);
-
-                System.out.println(result);
-            }
+        for (String word : words) {
+            countMap.put(word, countMap.getOrDefault(word, 0) + 1);
         }
+
+        Map<String, Boolean> result = new HashMap<>();
+
+        // 🔥 ИСПРАВЛЕНО ЗДЕСЬ
+        for (Map.Entry<String, Integer> entry : countMap.entrySet()) {
+            result.put(entry.getKey(), entry.getValue() >= 2);
+        }
+
+        return result;
+    }
+
+    public static void main(String[] args) {
+        String[] arr = {"a", "b", "a", "c", "b"};
+
+        Map<String, Boolean> result = wordMultiple(arr);
+
+        System.out.println(result);
+    }
+}
